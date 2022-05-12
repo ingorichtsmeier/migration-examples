@@ -1,0 +1,45 @@
+{
+  "components": [
+    {
+      "label": "The tweet",
+      "type": "textfield",
+      "id": "Field_11bceqv",
+      "key": "content",
+      "disabled": true
+    },
+    {
+      "values": [
+        {
+          "label": "True",
+          "value": "true"
+        },
+        {
+          "label": "False",
+          "value": "false"
+        }
+      ],
+      "label": "Approved?",
+      "type": "select",
+      "id": "Field_08rj1o8",
+      "key": "approved",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Any comment",
+      "type": "textfield",
+      "id": "Field_1x6okw3",
+      "key": "comment"
+    }
+  ],
+  "type": "default",
+  "id": "reviewForm",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.0.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.17.0",
+  "schemaVersion": 4
+}

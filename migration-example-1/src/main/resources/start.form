@@ -1,0 +1,22 @@
+{
+  "components": [
+    {
+      "label": "Your tweet",
+      "type": "textfield",
+      "id": "Field_1f1owbv",
+      "key": "content",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "startForm",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.0.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.17.0",
+  "schemaVersion": 4
+}
