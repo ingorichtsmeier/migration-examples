@@ -85,6 +85,7 @@
     <bpmn:userTask id="Activity_0lgxmw1" name="Review tweet" camunda:formRef="reviewForm" camunda:formRefBinding="latest" camunda:candidateGroups="management">
       <bpmn:extensionElements>
         <camunda:taskListener delegateExpression="${userNotificationDelegate}" event="create" id="sendNotificationMail" />
+        <camunda:taskListener expression="${task.setName(task.getName().concat(&#34; from &#34;).concat(initiator))}" event="create" id="changeName" />
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1r3heca</bpmn:incoming>
       <bpmn:outgoing>Flow_0dpxf4v</bpmn:outgoing>
@@ -297,16 +298,16 @@ print("counter: " + counter);
       <bpmndi:BPMNShape id="Activity_0f8uzrv_di" bpmnElement="Activity_0o7ty9w">
         <dc:Bounds x="1320" y="590" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0ybnemn_di" bpmnElement="Event_07g6e7q">
-        <dc:Bounds x="832" y="259" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="812" y="302" width="77" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1cz87lx_di" bpmnElement="Event_1klvbz7">
         <dc:Bounds x="542" y="179" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="469" y="153" width="81" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0ybnemn_di" bpmnElement="Event_07g6e7q">
+        <dc:Bounds x="832" y="259" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="812" y="302" width="77" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
