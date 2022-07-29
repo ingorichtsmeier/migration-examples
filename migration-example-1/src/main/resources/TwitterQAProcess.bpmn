@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1x6ldob" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.0.0" modeler:executionPlatform="Camunda Platform">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1x6ldob" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.1.0" modeler:executionPlatform="Camunda Platform">
   <bpmn:process id="TwitterQAProcess" name="Twitter QA" isExecutable="true" camunda:historyTimeToLive="30">
     <bpmn:startEvent id="StartEvent_1" name="Tweet written" camunda:formRef="startForm" camunda:formRefBinding="latest">
       <bpmn:outgoing>Flow_0warwwp</bpmn:outgoing>
@@ -14,7 +14,7 @@
     <bpmn:sequenceFlow id="Flow_1llvq7z" name="yes" sourceRef="Gateway_1alo7uq" targetRef="Activity_1ty3wlb">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${approved == true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:serviceTask id="Activity_1ty3wlb" name="Publish tweet" camunda:asyncBefore="true" camunda:class="com.camunda.devopstraining.CreateTweetDelegate">
+    <bpmn:serviceTask id="Activity_1ty3wlb" name="Publish tweet" camunda:asyncBefore="true" camunda:class="com.camunda.consulting.CreateTweetDelegate">
       <bpmn:extensionElements>
         <camunda:failedJobRetryTimeCycle>R3/PT10S</camunda:failedJobRetryTimeCycle>
       </bpmn:extensionElements>
@@ -37,7 +37,7 @@
       <bpmn:incoming>Flow_0warwwp</bpmn:incoming>
       <bpmn:outgoing>Flow_0g00z1h</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:sendTask id="Activity_07jtjqb" name="Send rejection notification" camunda:class="com.camunda.devopstraining.RejectionNotificationDelegate">
+    <bpmn:sendTask id="Activity_07jtjqb" name="Send rejection notification" camunda:class="com.camunda.consulting.RejectionNotificationDelegate">
       <bpmn:extensionElements />
       <bpmn:incoming>Flow_1a807rc</bpmn:incoming>
       <bpmn:outgoing>Flow_09czy2t</bpmn:outgoing>
