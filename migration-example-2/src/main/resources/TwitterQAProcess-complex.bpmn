@@ -55,7 +55,7 @@
     <bpmn:sequenceFlow id="Flow_1ipi2ke" sourceRef="Activity_0o7ty9w" targetRef="Gateway_0do5zx5" />
     <bpmn:boundaryEvent id="Event_07g6e7q" name="Duplicate tweet" attachedToRef="Activity_1gnc1w1">
       <bpmn:outgoing>Flow_08uets3</bpmn:outgoing>
-      <bpmn:errorEventDefinition id="ErrorEventDefinition_07bew90" />
+      <bpmn:errorEventDefinition id="ErrorEventDefinition_07bew90" errorRef="Error_1wrdjft" camunda:errorMessageVariable="errorMessage" />
     </bpmn:boundaryEvent>
     <bpmn:exclusiveGateway id="Gateway_0o9x2bp">
       <bpmn:incoming>Flow_0sf8uuk</bpmn:incoming>
@@ -122,6 +122,7 @@ print("counter: " + counter);
     </bpmn:userTask>
   </bpmn:process>
   <bpmn:message id="Message_3f7mths" name="TweetWithdrawnMessage" />
+  <bpmn:error id="Error_1wrdjft" name="duplicateTweetError" errorCode="duplicateTweet" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="TwitterQAProcessComplex">
       <bpmndi:BPMNEdge id="Flow_0scdve4_di" bpmnElement="Flow_0scdve4">
