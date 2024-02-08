@@ -27,15 +27,16 @@ public class PublishTweetDelegate implements JavaDelegate {
     Twitter twitter = new TwitterFactory().getInstance();
     twitter.setOAuthConsumer("lRhS80iIXXQtm6LM03awjvrvk", "gabtxwW8lnSL9yQUNdzAfgBOgIMSRqh7MegQs79GlKVWF36qLS");
     twitter.setOAuthAccessToken(accessToken);
-    try {
-      twitter.updateStatus(content);
-    } catch (TwitterException e) {
-      if (e.getErrorCode() == 187) {
-        throw new BpmnError("duplicateTweet", e.getLocalizedMessage());
-      } else {
-        throw e;
-      }
-    }
+//    try {
+//      twitter.updateStatus(content);
+      LOGGER.info("just a log: {}", content);
+//    } catch (TwitterException e) {
+//      if (e.getErrorCode() == 187) {
+//        throw new BpmnError("duplicateTweet", e.getLocalizedMessage());
+//      } else {
+//        throw e;
+//      }
+//    }
   }
 
 }
