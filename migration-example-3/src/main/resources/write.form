@@ -1,0 +1,19 @@
+{
+  "components": [
+    {
+      "label": "The tweet",
+      "type": "textfield",
+      "id": "Field_0iv3p02",
+      "key": "content"
+    }
+  ],
+  "type": "default",
+  "id": "writeForm",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.1.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.17.0",
+  "schemaVersion": 4
+}

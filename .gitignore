@@ -4,3 +4,4 @@
 **/.settings/
 **/camunda.mv.db
 **/camunda.trace.db
+**/.DS_Store
