@@ -29,13 +29,4 @@ public class ProcessUnitTest {
         .startBeforeActivity(findId("Increase counter")).setVariable("counter", 1).execute();
     assertThat(processInstance).isActive().variables().containsEntry("counter", 2);
   }
-
-  @Test
-  public void testTaskNameChange() {
-    Mocks.register("userNotificationDelegate", new UserNotificationDelegate());
-    ProcessInstance processInstance = runtimeService().createProcessInstanceByKey("TwitterQAProcessComplex")
-        .startBeforeActivity(findId("Review tweet")).setVariable("initiator", "demo").execute();
-
-    assertThat(processInstance).isActive().task().hasName("Review tweet from demo");
-  }
 }

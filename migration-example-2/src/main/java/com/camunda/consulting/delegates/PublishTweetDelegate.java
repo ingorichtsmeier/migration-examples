@@ -23,19 +23,19 @@ public class PublishTweetDelegate implements JavaDelegate {
     if (content.equals("network error")) {
       throw new RuntimeException("network error occured");
     }
-    AccessToken accessToken = new AccessToken("220324559-CO8TfUmrcoCrvFHP4TacgToN5hLC8cMw4n2EwmHo", "WvVureFv5TBWTGhESgGe3fqZM7XbGMuyIhxB84zgcoUER");
-    Twitter twitter = new TwitterFactory().getInstance();
-    twitter.setOAuthConsumer("lRhS80iIXXQtm6LM03awjvrvk", "gabtxwW8lnSL9yQUNdzAfgBOgIMSRqh7MegQs79GlKVWF36qLS");
-    twitter.setOAuthAccessToken(accessToken);
-    try {
-      twitter.updateStatus(content);
-    } catch (TwitterException e) {
-      if (e.getErrorCode() == 187) {
-        throw new BpmnError("duplicateTweet", e.getLocalizedMessage());
-      } else {
-        throw e;
+//    AccessToken accessToken = new AccessToken("220324559-CO8TfUmrcoCrvFHP4TacgToN5hLC8cMw4n2EwmHo", "WvVureFv5TBWTGhESgGe3fqZM7XbGMuyIhxB84zgcoUER");
+//    Twitter twitter = new TwitterFactory().getInstance();
+//    twitter.setOAuthConsumer("lRhS80iIXXQtm6LM03awjvrvk", "gabtxwW8lnSL9yQUNdzAfgBOgIMSRqh7MegQs79GlKVWF36qLS");
+//    twitter.setOAuthAccessToken(accessToken);
+//    try {
+//      twitter.updateStatus(content);
+//    } catch (TwitterException e) {
+      if ("duplicate".equals(content)) {
+        throw new BpmnError("duplicateTweet", "This tweet is a duplicate of another one");
+//      } else {
+//        throw e;
       }
-    }
+//    }
   }
 
 }
